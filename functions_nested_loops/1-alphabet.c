@@ -15,6 +15,4 @@ void print_alphabet(void)
 	a++;
 	}
 	printf("\n");
-
-	return;
 }
