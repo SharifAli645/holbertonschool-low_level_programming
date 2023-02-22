@@ -6,7 +6,6 @@
  *
  * Return: Always 0 (void)
  */
-
 int main(void)
 {
 	printf("_putchar\n");
