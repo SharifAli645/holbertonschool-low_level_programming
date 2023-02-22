@@ -1,10 +1,9 @@
 #include "main.h"
 /**
- * _islower - write 0 or 1
+ * _isalpha - write 0 or 1
  * @c: The character to evaluate
  *
- * Return: 0 if isn't a letter.
- * 1 If is a letter.
+ * Return: 0 if isn't a letter; 1 if it's.
  **/
 int _isalpha(int c)
 {
