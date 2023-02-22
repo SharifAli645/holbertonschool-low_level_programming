@@ -3,14 +3,14 @@
 #include <stdlib.h>
 /**
  * print_last_digit - write the last digit of a number
- * @i: The number to evaluate
+ * @e: The number to evaluate
  *
  * Return: the last digit
  */
 
 int print_last_digit(int e)
 {
-	if (e<0)
+	if (e < 0)
 	{
 		e = abs(e);
 	}
