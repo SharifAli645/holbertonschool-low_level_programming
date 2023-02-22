@@ -8,7 +8,7 @@
  **/
 int _islower(int c)
 {
-	while (c > 64 && c < 91)
+	while (c < 96 && c > 123)
 	{
 		return (0);
 	}
