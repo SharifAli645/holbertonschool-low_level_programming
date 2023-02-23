@@ -20,14 +20,13 @@ void jack_bauer(void)
 			{
 				while (minuto2 < 10)
 				{
-					
-					if(hora1 == 2 && hora2 == 4 && minuto1 == 0 && minuto2 == 0)
+					if (hora1 == 2 && hora2 == 4 && minuto1 == 0 && minuto2 == 0)
 					{
 						return;
 					}
 					printf("%d%d:%d%d", hora1, hora2, minuto1, minuto2);
 					minuto2++;
-		                        printf("\n");
+					printf("\n");
 				}
 				minuto2 = 0;
 				minuto1++;
