@@ -3,19 +3,14 @@
 /**
  * main - print Fizz Buzz
  *
- * Return: Always void
+ * Return: Always 0 void
  **/
-void main(void)
+int main(void)
 {
 	int i = 1;
 
-	while (i < 102)
+	while (i < 101)
 	{
-		if (i == 101)
-		{
-			printf("\n");
-			return;
-		}
 		if ((i % 3) == 0 && (i % 5) == 0)
 		{
 			printf("FizzBuzz ");
@@ -34,5 +29,13 @@ void main(void)
 			i++;
 		}
 
+		if (i == 100)
+		{
+			printf("Buzz");
+			printf("\n");
+			i++;
+		}
+
 	}
+	return (0);
 }
