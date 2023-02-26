@@ -12,25 +12,33 @@ void more_numbers(void)
 
 	while (c < 10)
 	{
-		if (a == 10)
-		{
-			a = 0;
-			b = 1;
-			while (a < 5)
-			{
-				_putchar(b + '0');
-				_putchar(a + '0');
-				a++;
-			}
-			_putchar('\n');
-			a = 0;
-			b = 0;
-			c++;
+		a = 0;
 
-		} else if (b == 0)
+		while (a < 10)
 		{
 			_putchar(a + '0');
 			a++;
+
+			if (a == 10 || b == 1)
+			{
+				if (a == 10)
+				{
+					a = 0;
+				}
+				b = 1;
+
+				if (a == 5)
+				{
+					a = 10;
+				}
+				if (a != 4)
+				{
+					_putchar(b + '0');
+				}
+			}
 		}
+		b = 0;
+		c++;
+		_putchar('\n');
 	}
 }
