@@ -8,7 +8,7 @@
 void print_triangle(int size)
 {
 	int a = 0;
-	int sizeE = size;
+	int sizeE = size-1;
 	int e = 0;
 	int sizeM = 1;
 	int m = 0;
@@ -22,7 +22,7 @@ void print_triangle(int size)
 		{
 			while (e < sizeE)
 			{
-				_putchar(' ');
+				_putchar('.');
 				e++;
 			}
 			e = 0;
