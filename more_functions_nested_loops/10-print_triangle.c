@@ -22,7 +22,7 @@ void print_triangle(int size)
 		{
 			while (e < sizeE)
 			{
-				_putchar('.');
+				_putchar(' ');
 				e++;
 			}
 			e = 0;
