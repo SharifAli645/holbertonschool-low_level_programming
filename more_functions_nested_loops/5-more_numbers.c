@@ -27,13 +27,14 @@ void more_numbers(void)
 				}
 				b = 1;
 
+				if (a != 5)
+				{
+					_putchar(b + '0');
+				}
+
 				if (a == 5)
 				{
 					a = 10;
-				}
-				if (a != 4)
-				{
-					_putchar(b + '0');
 				}
 			}
 		}
