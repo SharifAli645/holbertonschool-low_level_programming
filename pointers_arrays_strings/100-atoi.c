@@ -9,7 +9,7 @@
 int _atoi(char *s)
 {
 	char *ptr_ri = s;
-	int integer = 0;
+	unsigned int integer = 0;
 	int ten = 0;
 	int less = 0;
 
