@@ -39,6 +39,6 @@ int _atoi(char *s)
 	}
 	if ((less % 2) != 0)
 		integer = integer * -1;
-	return (integer);
 
+	return (integer);
 }
