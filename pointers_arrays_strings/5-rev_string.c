@@ -8,8 +8,8 @@
  **/
 void rev_string(char *s)
 {
-	char * left = s;
-	char * rigth;
+	char *left = s;
+	char *rigth;
 	int counter = 0;
 
 	while (*left != '\0')
@@ -17,11 +17,11 @@ void rev_string(char *s)
 		counter++;
 		left++;
 	}
-	
+
 	rigth = &s[counter - 1];
 	left = s;
 
-	while(left < rigth)
+	while (left < rigth)
 	{
 		*left ^= *rigth;
 		*rigth ^= *left;
