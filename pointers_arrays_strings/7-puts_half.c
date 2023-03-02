@@ -19,13 +19,13 @@ void puts_half(char *str)
 		ri++;
 	}
 	n = (counter - 1) / 2;
-	le = &str[counter];
-	ri = &str[n];
+	le = &str[n];
+	ri = &str[counter - 1];
 
-	while (ri < le)
+	while (le < ri)
 	{
-		ri++;
-		_putchar(*ri);
+		le++;
+		_putchar(*le);
 	}
 
 	_putchar('\n');
