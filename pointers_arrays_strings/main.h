@@ -3,7 +3,5 @@ void print_array(int *a, int n);
 void puts2(char *str);
 void rev_string(char *s);
 void puts_half(char *str);
-char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
-char *_strncat(char *dest, char *src, int n);
-char *_strncpy(char *dest, char *src, int n);
+int _strcmp(char *s1, char *s2);
