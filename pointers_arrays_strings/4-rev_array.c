@@ -10,7 +10,7 @@ void reverse_array(int *a, int n)
 {
 	int *l_ptr;
 	int *r_ptr;
-	int temp;
+	unsigned int temp;
 
 	l_ptr = a;
 	r_ptr = &a[n - 1];
