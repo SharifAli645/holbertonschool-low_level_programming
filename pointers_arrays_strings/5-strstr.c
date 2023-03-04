@@ -40,7 +40,7 @@ char *_strstr(char *haystack, char *needle)
 		ptr_r = ptr_h;
 	}
 	ptr_n = needle;
-	if (ptr_n == '\0')
+	if (*ptr_n == '\0')
 		return (needle);
 	return (NULL);
 }
