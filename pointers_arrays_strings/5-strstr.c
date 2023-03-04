@@ -39,5 +39,7 @@ char *_strstr(char *haystack, char *needle)
 		ptr_h++;
 		ptr_r = ptr_h;
 	}
+	if (*needle == '\0')
+		return (haystack);
 	return (NULL);
 }
