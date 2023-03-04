@@ -22,6 +22,13 @@ char *cap_string(char *arr)
 	{
 		if (counter == 0)
 		{
+			if (*ptr_arr > 96 && *ptr_arr < 123)
+			{
+				*ptr_arr = (*ptr_arr - 32);
+				ptr_arr++;
+				counter = 1;
+				continue;
+			}
 			ptr_arr++;
 			counter = 1;
 			continue;
