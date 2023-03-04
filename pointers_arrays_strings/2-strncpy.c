@@ -27,14 +27,18 @@ char *_strncpy(char *dest, char *src, int n)
 
 	dest_ptr = dest;
 
-	if (size > size_dest)
-		size = size_dest;
 
 	while (counter < size)
 	{
-		*dest_ptr = *src_ptr;
+		if (*src_ptr != '\0')
+		{
+			*dest_ptr = *src_ptr;
+			src_ptr++;
+		} else
+		{
+			*dest_ptr = '\0';
+		}
 		dest_ptr++;
-		src_ptr++;
 		counter++;
 	}
 
