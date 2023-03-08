@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.h"
+#include <stdlib.h>
 /**
  * main - main function
  * @argc: number of commands
@@ -22,9 +22,9 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		mul = _atoi(*argv) * mul;
+		mul = atoi(*argv) * mul;
 		argv++;
 	}
-	printf("%d", mul);
+	printf("%d\n", mul);
 	return (0);
 }
