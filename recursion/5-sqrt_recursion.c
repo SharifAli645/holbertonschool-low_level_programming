@@ -33,6 +33,9 @@ int _sqrt_recursion(int n)
 	int number = n / 2;
 	int sqrt;
 
+	if (number > 1000000)
+		number = number / 1000;
+
 	if (n == 1)
 		return (1);
 
