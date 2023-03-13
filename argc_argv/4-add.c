@@ -1,6 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * atoii - function that converts a string to a integer
+ * @str: source string
+ *
+ * Return: a integer or 0 if tha string contains letters
+ **/
+int atoii(char *str)
+{
+	int result = 0;
+	int sign = 1;
+
+	if (*str == '-')
+	{
+		sign = -1;
+		str++;
+	}
+	while (*str != '\0')
+	{
+		if (*str >= '0' && *str <= '9')
+		{
+			result = result * 10 + (*str - '0');
+		} else
+		{
+			return (-1);
+		}
+		str++;
+	}
+	return (sign * result);
+}
+/**
  * main - main function
  * @argc: number of commands
  * @argv: array of commands
@@ -20,16 +49,15 @@ int main(int argc, char *argv[])
 	} else if (argc > 1)
 	{
 		argv++;
-		val = atoi(*argv);
-		if (val == 0)
-		{
-			printf("Error\n");
-			return (1);
-		}
-
 		for (i = 1; i < argc; i++)
 		{
-			sum = atoi(*argv) + sum;
+			val = atoii(*argv);
+			if (val == -1)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			sum = val + sum;
 			argv++;
 		}
 		printf("%d\n", sum);
