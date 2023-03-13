@@ -20,6 +20,16 @@ char *str_concat(char *s1, char *s2)
 	size2 = strlen(s2);
 	arr = malloc(sizeof(char) * (size1 + size2 + 1));
 
+	if (s1 == NULL && s2 == NULL)
+	{
+		s1 = "";
+		s2 = "";
+	}
+	if (s2 == NULL)
+		s2 = "";
+	if (s1 == NULL)
+		s1 = "";
+
 	for (i = 0; i < (size1 + size2 + 1); i++)
 	{
 		if (i < size1)
