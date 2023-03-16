@@ -13,8 +13,13 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	int siz;
 	int counter = 0;
 
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+
 	siz = nmemb * size;
 	ptr = malloc(siz);
+	if (ptr == NULL)
+		return (NULL);
 
 	while (counter < siz)
 	{
