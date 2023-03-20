@@ -1,20 +1,17 @@
 #ifndef ONE
 #define ONE
 /**
- * struct dog - Short description
+ * struct dog_t - Short description
  * @name: name
  * @age: age
  * @owner: owner
  *
  * Description: Longer description
  */
-typedef struct dog
+typedef struct dog_t
 {
 	char *name;
 	float age;
 	char *owner;
-} dog;
-
-void init_dog(struct dog *d, char *name, float age, char *owner);
-void print_dog(struct dog *d);
+} dog_t;
 #endif
