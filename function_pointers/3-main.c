@@ -5,7 +5,7 @@
  * main - main function
  * @argc: argc
  * @argv: argv
- * 
+ *
  * Return: Always void
  **/
 int main(int argc, char *argv[])
@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (*s != '+' && *s != '-' && *s != '*' && *s != '/' && *s != '%')
+	if ((*s != '+' && *s != '-' && *s != '*' && *s != '/' && *s != '%')
+			|| *(s + 1) != '\0')
 	{
 		printf("Error\n");
 		exit(99);
