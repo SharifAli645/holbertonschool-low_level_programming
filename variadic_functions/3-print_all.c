@@ -32,11 +32,13 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				s = va_arg(list, char*);
-				if (s == NULL)
-					printf("(nil)");
-				else
-					printf("%s", s);
 				cnt = 1;
+				if (s == NULL)
+				{
+					printf("(nil)");
+					break;
+				}
+				printf("%s", s);
 				break;
 		}
 		lon++;
