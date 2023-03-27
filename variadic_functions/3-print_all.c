@@ -13,6 +13,9 @@ void print_all(const char * const format, ...)
 	int lon = 0;
 	va_list list;
 
+	if (format == NULL)
+		return;
+
 	va_start(list, format);
 	while (format[lon])
 	{
@@ -42,7 +45,7 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		lon++;
-		if (format[lon] && cnt)
+		while (format[lon] && cnt)
 		{
 			printf(", ");
 			cnt = 0;
