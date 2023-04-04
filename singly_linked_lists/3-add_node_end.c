@@ -17,7 +17,7 @@ int counter_string(const char *str)
 	return (cnt);
 }
 /**
- * add_node - function that adds a new node at the end of a list_t list
+ * add_node_end - function that adds a new node at the end of a list_t list
  * @head: list
  * @str: string
  *
