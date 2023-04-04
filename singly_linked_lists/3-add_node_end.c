@@ -23,7 +23,7 @@ int counter_string(const char *str)
  *
  * Return: the address of the new element
  **/
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *ptr = *head;
 
