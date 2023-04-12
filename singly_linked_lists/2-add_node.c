@@ -37,7 +37,7 @@ list_t *add_node(list_t **head, const char *str)
 		if ((*head)->str == NULL)
 		{
 			free(*head);
-			return(NULL);
+			return (NULL);
 		}
 		(*head)->len = counter_string(str);
 		(*head)->next = NULL;
