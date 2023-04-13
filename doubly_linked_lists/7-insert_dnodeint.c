@@ -3,6 +3,8 @@
  * counter - function that compare the index and a string
  * @h: list
  * @idx: index
+ *
+ * Return: 1 if the index is greater than the list
  **/
 int counter(dlistint_t *h, int idx)
 {
@@ -35,14 +37,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (ptr == NULL)
 		return (NULL);
-	if (counter(*h, idx))
-		return (NULL);
 	if (*h != NULL)
+	{
+		if (counter(*h, idx))
+			return (NULL);
 		while (end != idx)
 		{
 			tmp = tmp->next;
 			end++;
 		}
+	}
 	if (idx == 0)
 	{
 		ptr->n = n;
