@@ -1,5 +1,24 @@
 #include "lists.h"
 /**
+ * counter - function that compare the index and a string
+ * @h: list
+ * @idx: index
+ **/
+int counter(dlistint_t *h, int idx)
+{
+	int cnt = 0;
+
+	while (h != NULL)
+	{
+		h = h->next;
+		cnt++;
+	}
+	if (idx >= cnt)
+		return (1);
+	else
+		return (0);
+}
+/**
  * insert_dnodeint_at_index - function that inserts a new node at a given
  * position
  * @h: Pointer to dlistint_t pointer
@@ -15,6 +34,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int end = 0;
 
 	if (ptr == NULL)
+		return (NULL);
+	if (counter(*h, idx))
 		return (NULL);
 	if (*h != NULL)
 		while (end != idx)
