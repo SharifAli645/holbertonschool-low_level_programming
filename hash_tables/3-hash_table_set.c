@@ -12,12 +12,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	size_t index;
 
 	if (!key)
-		return 0;
+		return (0);
 
 	index = key_index((const unsigned char *) key, ht->size);
 
-	if(ht->array[index] == NULL)
+	if (ht->array[index] == NULL)
 	{
+		ht->array[index] = malloc(sizeof(hash_node_t));
 		ht->array[index]->value = strdup(value);
 		if (!ht->array[index]->value)
 			return (0);
