@@ -1,26 +1,5 @@
 #include "lists.h"
 /**
- * counter - function that compare the index and a string
- * @h: list
- * @idx: index
- *
- * Return: 1 if the index is greater than the list
- **/
-int counter(dlistint_t *h, int idx)
-{
-	int cnt = 0;
-
-	while (h != NULL)
-	{
-		h = h->next;
-		cnt++;
-	}
-	if (idx >= cnt)
-		return (1);
-	else
-		return (0);
-}
-/**
  * delete_dnodeint_at_index - function that deletes a node at index of a list
  * @head: Pointer to dlistint_t pointer
  * @index: Index
@@ -29,39 +8,36 @@ int counter(dlistint_t *h, int idx)
  **/
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *ptr = *head;
 	dlistint_t *tmp = *head;
-	unsigned int end = 0;
-	unsigned int e = 0;
+	unsigned int cnt = 0;
 
-	if (ptr == NULL)
+	if (*head == NULL)
 		return (-1);
-	if (*head != NULL)
-	{
-		if (counter(*head, index))
-			return (-1);
-		while (end != index)
-		{
-			tmp = tmp->next;
-			end++;
-		}
-		while (e != index)
-		{
-			ptr = ptr->next;
-			e++;
-		}
-	}
 	if (index == 0)
 	{
-		ptr->next->prev = NULL;
-		*head = ptr->next;
-		free(ptr);
-	} else
-	{
-		ptr->prev->next = ptr->next;
-		if (end != e)
-			ptr->next->prev = ptr->prev;
-		free(ptr);
+		*head = tmp->next;
+		if (tmp->next == NULL)
+			return (-1);
+		tmp->next->prev = NULL;
+		free(tmp);
+		return (1);
 	}
+	while (cnt < index)
+	{
+		if (tmp->next == NULL)
+			return (-1);
+		tmp = tmp->next;
+		cnt++;
+	}
+	tmp->prev->next = tmp->next;
+	if (tmp->next)
+		tmp->next->prev = tmp->prev;
+	if (tmp->next == NULL)
+	{
+		tmp->prev->next = NULL;
+		free(tmp);
+		return (1);
+	}
+	free(tmp);
 	return (1);
 }
