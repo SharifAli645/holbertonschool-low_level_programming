@@ -1,12 +1,36 @@
 #include "main.h"
 /**
+ * closer_fd - function that closes FD
+ * @close_1: indicator
+ * @close_2: indicator
+ * @fd_1: FD
+ * @fd_2: FD
  *
+ * Return: Always void
+ **/
+void closer_fd(int close_1, int fd_1, int close_2, int fd_2)
+{
+	if (close_1 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_1);
+		exit(100);
+	}
+	if (close_2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_2);
+		exit(100);
+	}
+}
+/**
+ * main - main function
+ * @ac: number of arguments
+ * @av: array of arguments
  *
- *
+ * Return: 0
  **/
 int main(int ac, char *av[])
 {
-	int fd, c_fd, cs_fd, cs_c_fd;
+	int fd, c_fd;
 	char buffer[1024];
 	int n1 = 1024;
 	int n2;
@@ -43,17 +67,6 @@ int main(int ac, char *av[])
 			exit(99);
 		}
 	}
-	cs_fd = close(fd);
-	cs_c_fd = close(c_fd);
-	if (cs_fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(100);
-	}
-	if (cs_c_fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", c_fd);
-		exit(100);
-	}
+	closer_fd(close(fd), fd, close(c_fd), c_fd);
 	return (0);
 }
