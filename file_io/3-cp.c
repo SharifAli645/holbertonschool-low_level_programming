@@ -61,7 +61,7 @@ int main(int ac, char *av[])
 			exit(98);
 		}
 		n2 = write(c_fd, buffer, n1);
-		if(n2 == -1)
+		if (n2 == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			exit(99);
