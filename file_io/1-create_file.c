@@ -12,15 +12,21 @@ int create_file(const char *filename, char *text_content)
 	int cnt = 0;
 	char *ptr = text_content;
 
-	fd = open(filename, O_CREAT | O_WRONLY, 0600);
-	if (fd == -1 || filename == NULL)
+	if (filename == NULL)
 		return (-1);
-	while (*ptr == '\0')
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (fd == -1)
+		return (-1);
+	if (text_content == NULL)
+	{
+		close(fd);
+		return (1);
+	}
+	while (*ptr)
 	{
 		ptr++;
 		cnt++;
 	}
-
 	write(fd, text_content, cnt);
 	close(fd);
 	return (1);
