@@ -4,11 +4,12 @@
  *
  *
  **/
-int main(int ac, char **av)
+int main(int ac, char *av[])
 {
 	int fd, c_fd, cs_fd, cs_c_fd;
 	char buffer[1024];
-	int n1, n2;
+	int n1 = 1024;
+	int n2;
 
 	if (ac != 3)
 	{
